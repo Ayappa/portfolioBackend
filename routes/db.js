@@ -9,7 +9,7 @@ router.post("/mailer", (req, res) => {
 		service: "Gmail",
 		auth: {
 			user: "pollVoice2020@gmail.com",
-			pass: "PollService@2020*",
+			pass: "qohfmblksfthexje",
 		},
 	});
 

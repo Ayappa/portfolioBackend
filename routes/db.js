@@ -6,7 +6,7 @@ router.post("/counter", (req, res) => {});
 
 router.post("/mailer", (req, res) => {
 	var transporter = nodemailer.createTransport({
-		service: "gmail",
+		service: "Gmail",
 		auth: {
 			user: "pollVoice2020@gmail.com",
 			pass: "PollService@2020*",
@@ -17,13 +17,18 @@ router.post("/mailer", (req, res) => {
 		from: "youremail@gmail.com",
 		to: "ayappaganesh1995@gmail.com",
 		subject: "Some one intrested in your portfolio",
-		html: '<h4>from '+req.body.from+'</h4></br></br><p>'+req.body.body+'</p>' ,
+		html:
+			"<h4>from " +
+			req.body.from +
+			"</h4></br></br><p>" +
+			req.body.body +
+			"</p>",
 	};
 
 	transporter.sendMail(mailOptions, function (error, info) {
 		if (error) {
-            console.log(error);
-            res.send(error);
+			console.log(error);
+			res.send(error);
 		} else {
 			console.log("Email sent: " + info.response);
 			res.send("Email sent: " + info.response);
